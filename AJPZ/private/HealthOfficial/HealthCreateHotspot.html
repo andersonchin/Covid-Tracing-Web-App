@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>User</title>
+
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="HealthCreateHotspot.css">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;700&display=swap" rel="stylesheet">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="Health.js" defer></script>
+        <script type="text/javascript" src="/javascripts/validator.min.js"></script>
+
+
+    </head>
+
+    <body id="user-account" onload = "loadHotspots()">
+
+        <div class="header">
+            <h1>HEALTH ID</h1>
+            <button id="logout-button" type="button" onclick="logout()">LOGOUT</button>
+        </div>
+
+        <div class ="horizontal-bar">
+            <ul>
+                <li><a href="HealthAccountInfo.html"> Account Information </a></li>
+                <li><a id="selected"> Manage Hotspots </a></li>
+                <li><a href="HealthHistory.html"> History </a></li>
+                <li><a href="HealthHotspotMap.html"> Hotspot Map </a></li>
+                <li><a href="HealthCreateOfficial.html"> Create New Official </a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <div class="createDelete">
+                <button class="create" v-bind:class="{selectedChoice:selected}" onclick="vueinst.selected=true">Create</button>
+                <button class="delete" v-bind:class="{selectedChoice:!selected}" onclick="vueinst.selected=false" >Delete</button>
+                <form class="createForm" v-bind:class="{hide:!selected}">
+                    <div class = "leftSide">
+                        <label>Location Name:</label>
+                        <input type="text" id="Name" placeholder="Location Name"></input>
+                        <label>Start Date:</label>
+                        <input type="text" id="Start"placeholder="YY-MM-DD"></input>
+                        <label>End Date:</label>
+                        <input type="text" id="End" placeholder="YY-MM-DD"></input>
+                        <label>Start Time:</label>
+                        <input type="text" id="StartTime" placeholder="HH:MM"></input>
+                        <label>End Time:</label>
+                        <input type="text" id="EndTime" placeholder="HH:MM"></input>
+                    </div>
+                    <div class = "rightSide">
+                        <label>Street Address:</label>
+                        <input type="text" id="Street" placeholder="Street Address"></input>
+                        <label>Suburb:</label>
+                        <input type="text" id="Suburb" placeholder="Suburb"></input>
+                        <label>State:</label>
+                        <input type="text" id="State" placeholder="State"></input>
+                        <label>Country:</label>
+                        <input type="text" id="Country" placeholder="Country"></input>
+                    </div>
+                    <button id = "Submit" onclick ="createHotspot(); return false">Create Hotspot</button>
+                </form>
+                <form class="deleteForm" v-bind:class="{hide:selected}">
+                    <label>Hotspot ID:</label>
+                    <input type="text" placeholder="Hotspot ID" id = "hotspotID"></input>
+                    <button onclick="DeleteHotspot()">Delete Hotspot</button>
+                </form>
+            </div>
+            <div class = "hotspots">
+                <p>Hotspots</p>
+                    <table id = "hotspotTable" >
+                          <colgroup>
+                                <col style="width:10%">
+                                <col style="width:90%">
+                             </colgroup>
+                        <tr>
+                            <th id ="small">ID</th>
+                            <th>VenueName</th>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+        <div class="footer">COPYRIGHT @COVID 19 TRACKING APPLICATION</div>
+    </body>
+
+</html>
+
+

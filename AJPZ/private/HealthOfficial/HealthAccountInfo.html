@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>User</title>
+
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="HealthAccountInfo.css">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;700&display=swap" rel="stylesheet">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="Health.js" defer></script>
+
+
+    </head>
+
+    <body id="user-account">
+
+        <div class="header">
+            <h1>HEALTH ID</h1>
+            <button id="logout-button" type="button" onclick="logout()">LOGOUT</button>
+        </div>
+
+        <div class ="horizontal-bar">
+            <ul>
+                <li><a id="selected"> Account Information </a></li>
+                <li><a href="HealthCreateHotspot.html"> Manage Hotspots</a></li>
+                <li><a href="HealthHistory.html"> History </a></li>
+                <li><a href="HealthHotspotMap.html"> Hotspot Map </a></li>
+                <li><a href="HealthCreateOfficial.html"> Create New Official </a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+                <form>
+                    <div class = "leftSide">
+                        <label>First Name:</label>
+                        <input type="text" placeholder="First Name"></input>
+                        <label>Last Name:</label>
+                        <input type="text" placeholder="Last Name"></input>
+                        <label>Date of Birth:</label>
+                        <input type="text" placeholder="DD/MM/YYYY"></input>
+                        <label>Email Address:</label>
+                        <input type="text" placeholder="Email Address"></input>
+                        <label>Phone Number:</label>
+                        <input type="text" placeholder="Phone Number"></input>
+                        <label>Occupation:</label>
+                        <input type="text" placeholder="Occupation"></input>
+                    </div>
+                    <div class = "rightSide">
+                        <label>House Number:</label>
+                        <input type="text" placeholder="House Number"></input>
+                        <label>Street Name:</label>
+                        <input type="text" placeholder="Street Name"></input>
+                        <label>Suburb:</label>
+                        <input type="text" placeholder="Suburb"></input>
+                        <label>State:</label>
+                        <input type="text" placeholder="State"></input>
+                        <label>Country:</label>
+                        <input type="text" placeholder="Country"></input>
+                        <label>Postcode:</label>
+                        <input type="text" placeholder="Postcode"></input>
+                    </div>
+                    <button>Save Changes</button>
+                </form>
+        </div>
+        <div class="footer">COPYRIGHT @COVID 19 TRACKING APPLICATION</div>
+    </body>
+
+</html>
+
+

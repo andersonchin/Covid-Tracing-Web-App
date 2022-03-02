@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Register</title>
+            <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+            <link rel="stylesheet" href="/stylesheets/register.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="/javascripts/register.js" defer></script>
+        <script type="text/javascript" src="/javascripts/validator.min.js"></script>
+
+        </head>
+    <body class = "row">
+        <div class="box">
+            <div class="inputs">
+                <div class = title>
+                    <h1 id='register'>REGISTER</h1>
+                    <div class="pure-button-group center" role="group">
+                        <button class="pure-button" onclick="vueinst.userShow = true;">User</button>
+                        <button class="pure-button" onclick="vueinst.userShow = false;">Manager</button>
+                    </div>
+                </div>
+                <br>
+
+            <form id="switchColumn" >
+            <div class = "user-details">
+                <div class="input">
+
+                    <span class="details">Email Address</span>
+                    <input type="text" id="email" name="email" placeholder="Enter your email address" required>
+
+                </div>
+
+                <div class="input">
+
+                    <span class="details">Password</span>
+                    <input type="password" id="pass" name="pass" placeholder = "Enter password" required>
+                </div>
+
+                <div class="input">
+
+                    <span class="details" v-show="userShow === true">Date of Birth</span>
+                    <input type="date" id="dob" name="dob" v-show="userShow === true">
+
+
+                </div>
+
+                <div class="input">
+
+                    <span class="details"  v-show="userShow === false">Venue name</span>
+                    <input type="text" id="vname" name="vname" v-show="userShow === false" placeholder ="Enter venue name">
+
+                </div>
+
+                <div class="input">
+
+                    <span class="details">First name</span>
+                    <input type="text" id="fname" name="fname" placeholder = "Enter first name" required>
+
+                </div>
+
+                <div class="input">
+
+                    <span class="details">Last name</span>
+                    <input type="text" id="lname" name="lname" placeholder = "Enter last name" required>
+                </div>
+
+                <div class="input">
+
+                    <span class="phone">Phone number</span>
+                    <input type="number" id="phone" name="phone" placeholder = "Enter phone number" required>
+                </div>
+
+                <div class="input">
+
+                    <span class="details">Street Address</span>
+                    <input type="text" id="street1" name="street1" placeholder ="Enter street name" required>
+
+                </div>
+
+                <div class="input">
+
+                    <span class="details">Suburb</span>
+                    <input type="text" id="suburb1" name="suburb1" placeholder ="Enter suburb name" required>
+
+                </div>
+
+                <div class="input">
+
+                    <span class="details">State</span>
+                    <input type="text" id="state1" name="state1" placeholder ="Enter state" required>
+                </div>
+
+                <div class="input">
+
+                    <span class="details">Country</span>
+                    <input type="text" id="country1" name="country1" placeholder ="Enter country" required>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class = "button">
+                <input type="submit" value="Submit" class="submit" id="Submit">
+            </div>
+
+            </form>
+           </div>
+        </div>
+
+    </body>
+</html>

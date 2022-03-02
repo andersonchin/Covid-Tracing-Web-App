@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>User</title>
+
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="UserHotspotMap.css">
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;700&display=swap" rel="stylesheet">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="user.js" defer></script>
+        <!--FROM HERE-->
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+        <script src="../../javascripts/map-functions.js" defer></script>
+        <!--TO HERE-->
+
+
+    </head>
+
+    <body id="user-account" onload="getInterval()">
+
+        <div class="header">
+            <h1>ACCOUNT ID</h1>
+            <button id="logout-button" type="button" onclick="logout()">LOGOUT</button>
+        </div>
+
+        <div class ="horizontal-bar">
+            <ul>
+                <li><a href="UserAccountInfo.html"> Account Information </a></li>
+                <li><a href="UserCheckIn.html"> Check-In </a></li>
+                <li><a href="UserHistory.html"> History </a></li>
+                <li><a id="selected"> Hotspot Map </a></li>
+            </ul>
+        </div>
+<!--FROM HERE-->
+        <div class="content">
+            <div class="map_cont">
+        <div id="map"></div>
+      </div>
+      <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+      <link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
+        type="text/css"
+      />
+
+      <!-- Promise polyfill script is required -->
+      <!-- to use Mapbox GL Geocoder in IE 11. -->
+      <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+      <script>
+        mapboxgl.accessToken =
+          "pk.eyJ1IjoiY29ybnBhY3MiLCJhIjoiY2twcXA4ZnVhMGFoNDJvbXV2amVqdGYyaiJ9.gbcMgIfBAuxqqaU-448nZA";
+        //define the map
+        var map = new mapboxgl.Map({
+          container: "map",
+          style: "mapbox://styles/mapbox/streets-v11",
+          center: [138.364, -34.5544],
+          zoom: 4,
+        });
+        //config the default hotspot locations for the map.
+        var geojson = {
+          type: 'FeatureCollection',
+          features: [{
+            type: 'Feature',
+            geometry: {
+              type: 'Point',
+              coordinates: [138.6007, -34.9285]
+            },
+            properties: {
+              title: 'Mapbox',
+              description: 'Adelaide CBD'
+            }
+          }]
+        };
+              // Add the control to the map.
+              map.addControl(
+                new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+          })
+          );
+
+          map.addControl(
+            new mapboxgl.GeolocateControl({
+              positionOptions: {
+                enableHighAccuracy: true
+              },
+              trackUserLocation: true
+            })
+            );
+
+        //get the users location:
+        var options = {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
+        };
+        function success(pos) {
+          var crd = pos.coords;
+          //store the users long/lat in the session storage.
+          sessionStorage.setItem("user-lat", `${crd.latitude}`) ;
+          sessionStorage.setItem("user-long", `${crd.longitude}`) ;
+          //console log
+          console.log('Your current position is:');
+          console.log(`Latitude : ${crd.latitude}`);
+          console.log(`Longitude: ${crd.longitude}`);
+          console.log(`More or less ${crd.accuracy} meters.`);
+        function error(err) {
+          console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+        navigator.geolocation.getCurrentPosition(success, error, options);
+        }
+
+        function loadMarkers(geojson){
+          // console.log("bruh");
+          geojson.features.forEach(function (marker) {
+            // create a HTML element for each feature
+            var el = document.createElement('div');
+            el.className = 'marker';
+
+            // make a marker for each feature and add it to the map
+            new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .setPopup(
+              new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(
+                '<h3>' +
+                marker.properties.title +
+                '</h3><p>' +
+                marker.properties.description +
+                '</p>'
+                )
+                )
+                .addTo(map);
+          });
+        }
+
+        function getInterval() {
+          setInterval(
+            function getHotspots() {
+              console.log("get");
+              var xmlhttp = new XMLHttpRequest();
+              // Define function to run on response
+              xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  var posts = JSON.parse(this.responseText);
+                  // console.log('POSTS',posts);
+                  //////// EDIT HERE FOR POPULATING GEOJSON
+                  for (let i = 0; i < posts.length; i ++) {
+                    let newHotspot =  {
+                      type: 'Feature',
+                      geometry: {
+                        type: 'Point',
+                        coordinates: [JSON.parse(posts[i].longitude), JSON.parse(posts[i].latitude)]
+                      },
+                      properties: {
+                        title: 'Mapbox',
+                        description: posts[i].name,
+                      }
+                    };
+                    // console.log('hotspot array',newHotspot);
+                    geojson.features.push(newHotspot);
+                  } // FOR LOOP
+                } // IF LOOP
+              };  // onreadystatechange
+              // console.log('updated GEOJSON',geojson);
+              xmlhttp.open("GET", "/addHotspot", true);
+              xmlhttp.send();
+              loadMarkers(geojson);
+            }, 2000); // getHotspots
+        }
+      </script>
+    </div>
+        </div>
+        <div class="footer">COPYRIGHT @COVID 19 TRACKING APPLICATION</div>
+        <!--TO HERE-->
+    </body>
+
+</html>
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>User</title>
+
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="HealthHistory.css">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="Health.js" defer></script>
+
+
+    </head>
+
+    <body id="user-account">
+
+        <div class="header">
+            <h1>HEALTH ID</h1>
+            <button id="logout-button" type="button" onclick="logout()">LOGOUT</button>
+        </div>
+
+        <div class ="horizontal-bar">
+            <ul>
+                <li><a href="HealthAccountInfo.html"> Account Information </a></li>
+                <li><a href="HealthCreateHotspot.html"> Manage Hotspots</a></li>
+                <li><a id="selected"> History </a></li>
+                <li><a href="HealthHotspotMap.html"> Hotspot Map </a></li>
+                <li><a href="HealthCreateOfficial.html"> Create New Official </a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="history">
+                <p>Check-In History</p>
+                    <form>
+                      <input type="text" placeholder="Search..."></input>
+                      <select>
+                          <option value="0">User</option>
+                          <option value="1">Venue</option>
+                      </select>
+                      <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+            </div>
+        </div>
+        <div class="footer">COPYRIGHT @COVID 19 TRACKING APPLICATION</div>
+    </body>
+
+</html>
+
+

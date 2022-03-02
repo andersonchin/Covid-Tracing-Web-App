@@ -1,0 +1,192 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    background-color: #072f5f;
+    width: 100%;
+    height: 5%;
+    border-style: none;
+}
+
+h1 {
+    width: 50%;
+    display:inline-block;
+    padding-left: 2.5%;
+    font-family: 'Titillium Web';
+    font-weight: 900;
+    font-size: 200%;
+    color: white
+}
+
+#logout-button {
+    display:inline-block;
+    width: 5%;
+    height: 52%;
+    float: right;
+    
+    margin-top: 0.5%;
+    margin-right: 0.7%;
+    
+    border-radius: 5px;
+    border-style: none;
+    background-color: white;
+    
+    transition-duration: 0.4s;
+    
+    font-family: 'Titillium Web';
+    font-weight: 200;
+    font-size: 100%;
+}
+
+#logout-button:hover {
+    background-color: #3895d3;
+    cursor: pointer;
+}
+
+.horizontal-bar {
+    width: 100%;
+    height: 4%;
+}
+
+.horizontal-bar ul{
+    list-style-type: none;
+}
+
+.horizontal-bar li {
+    float: left;
+    width: 50%;
+    height: 100%;
+    border-style: none;
+}
+
+.horizontal-bar li a {
+    text-align: center;
+    display: inline-block;
+    padding: 0.5%;
+    
+    width: 100%;
+    background-color: white;
+
+    
+    color: black;
+    font-family: 'Titillium Web';
+    font-weight: 200;
+    font-size: 100%;
+    text-decoration: none;
+    
+    transition-duration: 0.4s;
+}
+
+.horizontal-bar li a:hover   {
+    color: white;
+    background-color: #3895d3;
+}
+
+#selected {
+    color: white;
+    background-color: #3895d3;
+    opacity: 0.5;
+}
+
+.content {
+    height: 86%;
+    background-image: url("check-in.png");
+    background-size: cover;
+    background-color: #072f5f;
+}
+
+.content form {
+    border-radius: 10px;
+    display: inline-block;
+    height: 90%;
+    width:50%;
+    margin-left: 25%;
+    margin-top: 2.5%;
+    background-color: white;
+}
+
+.leftSide {
+    height: 80%;
+    width: 50%;
+    float: left;
+    display: block;
+}
+
+.rightSide {
+    height: 80%;
+    width: 50%;
+    float: left;
+    display: block;
+}
+
+.content label {
+    font-family: 'Titillium Web';
+    font-weight: 200;
+    font-size: 100%;
+    
+    display: block;
+    
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 12.5%;
+    
+    height: 1%;
+    width: 50%;
+}
+
+.content input[type=text] {
+    display: block;
+    font-family: 'Titillium Web';
+    font-weight: 200;
+    font-size: 100%;
+    
+    border-radius: 5px;
+    border-style: solid;
+    border-color:#3895d3;
+        
+    margin-left: 12.5%;
+    padding: 2%;
+    
+    height: 7%;
+    width: 75%;
+}
+
+.content form button {
+    display: block;
+    background-color: white;
+    
+    border-radius: 20px;
+    border-style: solid;
+    border-color:#3895d3;
+    
+    font-family: 'Titillium Web';
+    font-weight: 200;
+    font-size: 100%;
+    
+    margin-left: 40%;
+    margin-top: 66%;
+    
+    transition-duration: 0.4s;
+    
+    height: 5%;
+    width: 20%;
+}
+
+.content form button:hover {
+    background-color: #3895d3;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.footer {
+    padding-top: 0.7%;
+    text-align: center;
+    height: 5%;
+    background-color: #072f5f;
+    color: white;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>User</title>
+
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="UserCheckIn.css">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;700&display=swap" rel="stylesheet">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="user.js" defer></script>
+        <script type="text/javascript" src="/javascripts/validator.min.js"></script>
+
+
+    </head>
+
+    <body id="user-account">
+
+        <div class="header">
+            <h1>ACCOUNT ID</h1>
+            <button id="logout-button" type="button" onclick="logout()">LOGOUT</button>
+        </div>
+
+        <div class ="horizontal-bar">
+            <ul>
+                <li><a href="UserAccountInfo.html"> Account Information </a></li>
+                <li><a id="selected"> Check-In </a></li>
+                <li><a href="UserHistory.html"> History </a></li>
+                <li><a href="UserHotspotMap.html"> Hotspot Map </a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+                <form>
+                    <input type="text" placeholder="Enter check-in code" id="checkin"></input>
+                    <button type="submit" onclick= "checkIn(); return false">submit</button>
+                </form>
+        </div>
+        <div class="footer">COPYRIGHT @COVID 19 TRACKING APPLICATION</div>
+    </body>
+
+</html>
+
+

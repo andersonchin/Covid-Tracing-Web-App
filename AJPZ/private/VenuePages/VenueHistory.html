@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>User</title>
+
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="VenueHistory.css">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="venue.js" defer></script>
+
+
+    </head>
+
+    <body id="user-account" onload = "getHistory()">
+
+        <div class="header">
+            <h1>VENUE ID</h1>
+            <button id="logout-button" type="button" onclick="logout()">LOGOUT</button>
+        </div>
+
+        <div class ="horizontal-bar">
+            <ul>
+                <li><a href="VenueAccountInfo.html"> Venue Information </a></li>
+                <li><a id="selected"> History </a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="history">
+                <p>All Check-In History</p>
+                <table id = "historyTable" >
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:90%">
+                     </colgroup>
+                    <tr>
+                        <th id ="small">Given Name</th>
+                        <th>Last Name</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="footer">COPYRIGHT @COVID 19 TRACKING APPLICATION</div>
+    </body>
+
+</html>
+
+

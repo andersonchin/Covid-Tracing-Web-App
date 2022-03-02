@@ -1,0 +1,91 @@
+header {
+    margin: 1em;
+    border-bottom: 1px solid #333533;
+}
+
+.split
+{
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    top: 0;
+}
+
+
+.leftSide
+{
+    left: 0;
+    background-color: white;
+}
+
+.centred
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.rightSide
+{
+    right: 0;
+    background-color: lightgrey;
+}
+
+h1
+{
+    font-size: 500%;
+    margin: 0;
+}
+
+a
+{
+    font-size: 90%;
+    height: 10px;
+    display: block;
+    color:black;
+}
+
+/*#Login*/
+/*{*/
+/*    font-size: 120%;*/
+/*    background-color:lightgrey;*/
+/*    border: 1px solid;*/
+/*    border-radius: 5px;*/
+/*    display: inline-block;*/
+/*    margin-top: 5%;*/
+/*}*/
+
+/*#Register*/
+/*{*/
+/*    font-size: 120%;*/
+/*    background-color:lightgrey;*/
+/*    border: 1px solid;*/
+/*    border-radius: 5px;*/
+/*    display: inline-block;*/
+/*    margin-top: 5%;*/
+/*}*/
+
+#map
+{
+    border-style: groove;
+    display: block;
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    /*top: 50%; -ms-transform: translateY(-50%);*/
+    /*transform: translateY(-50%);*/
+}
+
+#logout
+{
+    display:inline-block;
+    position: absolute;
+    right: 1em;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(202, 60, 60);
+}

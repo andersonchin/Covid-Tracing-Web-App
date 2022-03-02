@@ -1,0 +1,9 @@
+RUN THROUGH WEBSITE
+Begin at login page, show map functionality of current hotspots;
+Navigate to register page,
+Show the process of registering,
+HIGHLIGHT that input fields are validated and so no fields can be empty and sanitized, unable to register if email in use
+HIGHLIGHT javascript and ajax being used so fields are not shown in URL when submitting
+After submitting registration, show server side SQL database and the new entries inside the tables
+Login using email and password highlighting OPENID API
+

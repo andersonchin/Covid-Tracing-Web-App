@@ -1,0 +1,27 @@
+{
+    'type': 'FeatureCollection',
+    'features': [
+        {
+            'type': 'Feature',
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [142.4982, -38.3687]
+            },
+            'properties': {
+                'title': 'Mapbox',
+                'description': 'Washington, D.C.'
+            }
+        },
+        {
+            'type': 'Feature',
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [144.9631, -37.8136]
+            },
+            'properties': {
+                'title': 'Mapbox',
+                'description': 'San Francisco, California'
+            }
+        }
+        ]
+};

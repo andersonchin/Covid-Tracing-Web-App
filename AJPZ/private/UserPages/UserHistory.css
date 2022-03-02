@@ -1,0 +1,213 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    background-color: #072f5f;
+    width: 100%;
+    height: 5%;
+    border-style: none;
+}
+
+h1 {
+    width: 50%;
+    display:inline-block;
+    padding-left: 2.5%;
+    font-family: 'Titillium Web';
+    font-weight: 900;
+    font-size: 200%;
+    color: white
+}
+
+#logout-button {
+    display:inline-block;
+    width: 5%;
+    height: 52%;
+    float: right;
+
+    margin-top: 0.5%;
+    margin-right: 0.7%;
+
+    border-radius: 5px;
+    border-style: none;
+    background-color: white;
+
+    transition-duration: 0.4s;
+
+    font-family: 'Titillium Web';
+    font-weight: 200;
+    font-size: 100%;
+}
+
+#logout-button:hover {
+    background-color: #3895d3;
+    cursor: pointer;
+}
+
+.horizontal-bar {
+    width: 100%;
+    height: 4%;
+}
+
+.horizontal-bar ul{
+    list-style-type: none;
+}
+
+.horizontal-bar li {
+    float: left;
+    width: 25%;
+    height: 100%;
+    border-style: none;
+}
+
+.horizontal-bar li a {
+    text-align: center;
+    display: inline-block;
+    padding: 1.5%;
+
+    width: 100%;
+    background-color: white;
+
+
+    color: black;
+    font-family: 'Titillium Web';
+    font-weight: 200;
+    font-size: 100%;
+    text-decoration: none;
+
+    transition-duration: 0.4s;
+}
+
+.horizontal-bar li a:hover   {
+    color: white;
+    background-color: #3895d3;
+}
+
+#selected {
+    color: white;
+    background-color: #3895d3;
+    opacity: 0.5;
+}
+
+.content {
+    height: 86%;
+    background-color:#072f5f;;
+    background-image: url("check-in.png");
+    background-size: cover;
+}
+
+.history {
+    display:inline-block;
+    margin-top: 2.5%;
+    margin-left: 12.5%;
+    background-color: white;
+    border-radius: 10px;
+    height: 90%;
+    width: 75%;
+}
+
+#hotspots-visited {
+    float:left;
+    display: inline-block;
+    width:40%;
+    border-right: 15px solid #072f5f;
+}
+
+#hotspots-visited p {
+    display:inline-block;
+    height:10%;
+    width: 100%;
+    text-align:center;
+    text-decoration: underline;
+    font-family: 'Titillium Web';
+    font-weight: 900;
+    font-size: 200%;
+}
+
+#check-in-history {
+    float:left;
+    display: inline-block;
+    width: 60%;
+}
+
+#check-in-history p {
+    display:inline-block;
+    height:10%;
+    width: 100%;
+    text-align:center;
+    text-decoration: underline;
+    font-family: 'Titillium Web';
+    font-weight: 900;
+    font-size: 200%;
+}
+
+#check-in-history form {
+    height: 5%;
+    width: 85%;
+    margin-left: 7.5%;
+}
+
+#check-in-history input {
+    float: left;
+    display:inline-block;
+    height: 100%;
+    width: 88%;
+    font-size: 150%;
+    padding-left: 3%;
+    border-radius: 5px 0px 0px 5px;
+    border-style: solid;
+    border-color:#3895d3;
+    border-right: none;
+}
+
+#check-in-history button {
+    display:inline-block;
+    float: left;
+    height: 100%;
+    width: 12%;
+    padding-top: 1%;
+    font-size: 100%;
+    border-radius: 0px 5px 5px 0px;
+    border-style: solid;
+    border-color:#3895d3;
+    background-color: white;
+    transition-duration: 0.4s;
+}
+
+#check-in-history button:hover {
+    background-color: #3895d3;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#historyTable, td, th {
+    margin-left: 5%;
+    border: 1px solid #3895d3;
+    font-family: 'Titillium Web';
+    font-weight: 900;
+    font-size: 100%;
+    width: 90%;
+    height: 10%;
+}
+
+#historyTableH, td, th {
+    margin-left: 5%;
+    border: 1px solid #3895d3;
+    font-family: 'Titillium Web';
+    font-weight: 900;
+    font-size: 100%;
+    width: 90%;
+    height: 10%;
+}
+
+.footer {
+    padding-top: 0.7%;
+    text-align: center;
+    height: 5%;
+    background-color: #072f5f;
+    color: white;
+}

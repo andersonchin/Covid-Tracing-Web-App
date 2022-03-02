@@ -1,0 +1,133 @@
+.split
+{
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    top: 0;
+}
+
+
+.leftSide
+{
+    left: 0;
+    background-image: url("check-in.png");
+    background-size: cover;
+}
+
+.centred
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background:white;
+    padding:20px;
+    padding-bottom:30px;
+    border-radius:5px;
+    box-shadow: 5px 10px #888888;
+}
+
+
+.rightSide
+{
+    right: 0;
+    background-color: lightgrey;
+}
+
+h1
+{
+    font-size: 500%;
+    margin: 0;
+
+}
+
+a
+{
+    font-size: 90%;
+    height: 10px;
+    display: block;
+    color:black;
+}
+
+/*#Login*/
+/*{*/
+/*    font-size: 120%;*/
+/*    background-color:lightgrey;*/
+/*    border: 1px solid;*/
+/*    border-radius: 5px;*/
+/*    display: inline-block;*/
+/*    margin-top: 5%;*/
+/*}*/
+
+/*#Register*/
+/*{*/
+/*    font-size: 120%;*/
+/*    background-color:lightgrey;*/
+/*    border: 1px solid;*/
+/*    border-radius: 5px;*/
+/*    display: inline-block;*/
+/*    margin-top: 5%;*/
+/*}*/
+
+/*#map*/
+/*{*/
+/*    border-style: groove;*/
+/*    display: block;*/
+    /*width: 800px;*/
+/*    height: 90vh;*/
+/*    margin: auto;*/
+/*    top: 50%; -ms-transform: translateY(-50%);*/
+/*    transform: translateY(-50%);*/
+/*}*/
+
+/*input*/
+/*{*/
+/*    font-size: 120%;*/
+/*    display: block;*/
+/*}*/
+
+/*.marker {*/
+/*  background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');*/
+/*  background-size: cover;*/
+/*  width: 50px;*/
+/*  height: 50px;*/
+/*  border-radius: 50%;*/
+/*  cursor: pointer;*/
+/*}*/
+
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        /*height: 80vh;*/
+        width: 100%;
+      }
+      .marker {
+        background-image: url('https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      .mapboxgl-popup {
+        max-width: 200px;
+      }
+      .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .welcome-message {
+          font-size : 11px;
+
+      }
+
+.action-buttons {
+    margin-top: 10px;
+}
