@@ -1,6 +1,6 @@
 # Covid-Tracing-Web-App
 
-Simple full stack web app the allows for Covid Tracing functionality. Users are able to check-in, view hotspots and history and be notified. Managers are able to register venues and be notified. Admins are able to create hotspots and notify of users of hotspots. Incorporates crud functionality (create, read, update, delete) using the Sakila and Relational database design. Also incorporates escaping query values to avoid SQL injection attacks (functionally same as prepared statements).
+Simple full stack web app the allows for Covid Tracing functionality. Users are able to check-in, view hotspots and history and be notified. Managers are able to register venues and be notified. Admins are able to create hotspots and notify of users of hotspots. Incorporates crud functionality (create, read, update, delete) using the Sakila and Relational database design. Also incorporates validation and sanitization to avoid secruity risks through XSS and SQL injection.
 
 Steps to run:
 
