@@ -9,7 +9,7 @@ install nodejs and dependencies (express, mysql, vue)
 run with $ npm start
 run sql server on localhost
 
-![img](https://github.com/andersonchin/Covid-Tracing-Web-App/tree/main/AJPZ/loginjpg.jpg?raw=true)
+![login](./AJPZ/loginjpg.jpg)
 
 First register as either a user or a manager via the register page, ensure you enter all your details. After registering correctly youll be redirected back to
 the login page. Enter those credentials to login and youll be redirected to either the user or venue page. Follow the links along the to naivgate the page.
